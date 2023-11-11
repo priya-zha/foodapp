@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private MyDatabaseHelper dbHelper;
     private EditText editTextUsername, editTextEmail, editTextPassword;
+    TextView logintext;
     private Button buttonRegister;
 
     @Override
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 editTextUsername = findViewById(R.id.editTextUsername);
                 editTextEmail = findViewById(R.id.editTextEmail);
                 editTextPassword = findViewById(R.id.editTextPassword);
+               // logintext = findViewById(R.id.logintext);
 
                 buttonRegister = findViewById(R.id.buttonRegister);
                 buttonRegister.setOnClickListener(new View.OnClickListener() {

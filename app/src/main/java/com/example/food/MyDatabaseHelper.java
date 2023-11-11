@@ -2,6 +2,7 @@ package com.example.food;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -49,6 +50,27 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         long newRowId = db.insert(TABLE_NAME, null, values);
         db.close();
         return newRowId;
+    }
+
+    public boolean checkLogin(String email, String password) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {COLUMN_ID};
+        String selection = COLUMN_EMAIL + " = ? AND " + COLUMN_PASSWORD + " = ?";
+        String[] selectionArgs = {email, password};
+        Cursor cursor = db.query(
+                TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        boolean loginSuccessful = cursor.moveToFirst();
+        cursor.close();
+        db.close();
+        return loginSuccessful;
     }
     }
 

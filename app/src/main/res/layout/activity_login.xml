@@ -7,41 +7,27 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Username EditText -->
+    <!-- Login Email EditText -->
     <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"/>
-
-    <!-- Email EditText -->
-    <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editTextLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:hint="Email"/>
 
-    <!-- Password EditText -->
+    <!-- Login Password EditText -->
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextLoginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="Password"/>
 
-    <!-- Register Button -->
+    <!-- Login Button -->
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logintext"
-        android:text="Login"
-        />
+        android:text="Login"/>
 
 </LinearLayout>
