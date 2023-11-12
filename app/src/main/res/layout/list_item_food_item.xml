@@ -2,43 +2,56 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/card"
+    android:padding="16dp"
+    android:layout_marginVertical="8dp">
 
     <TextView
         android:id="@+id/textViewDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/red"
         android:text="Description" />
 
     <TextView
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_access_time_24"
+        android:drawablePadding="10dp"
         />
 
     <TextView
         android:id="@+id/textViewLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_add_location_24"
+        android:drawablePadding="10dp"
       />
 
         <TextView
             android:id="@+id/textViewAvailableUntil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_more_time_24"
+            android:drawablePadding="10dp"
           />
 
         <TextView
             android:id="@+id/textViewQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_shopping_cart_24"
+            android:drawablePadding="10dp"
            />
         <TextView
             android:id="@+id/textViewAllergen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/baseline_dangerous_24"
+            android:drawablePadding="10dp"
             />
 
 

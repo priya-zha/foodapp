@@ -33,6 +33,7 @@ public class landingpage extends AppCompatActivity {
     String username;
     String email;
     String untid;
+    String admin = "0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +123,7 @@ public class landingpage extends AppCompatActivity {
                 // Dismiss the popup
                 popupWindow.dismiss();
                 Toast.makeText(landingpage.this, editTDescription + editTDate + editTLocation, Toast.LENGTH_SHORT).show();
+                admin = "1";
             }
         });
 
@@ -187,6 +189,7 @@ public class landingpage extends AppCompatActivity {
         intent.putExtra("username",username );
         intent.putExtra("email",email);
         intent.putExtra("untid",untid );
+        intent.putExtra("admin",admin );
         startActivity(intent);
 
     }

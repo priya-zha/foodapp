@@ -2,7 +2,6 @@ package com.example.food;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +17,7 @@ public class DetailsActivity extends AppCompatActivity {
     Button claim;
     TextView warning1, warning2, warning3;
     ImageView imageView;
+    String admin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class DetailsActivity extends AppCompatActivity {
         username = getIntent().getStringExtra("username");
         email = getIntent().getStringExtra("email");
         untid = getIntent().getStringExtra("untid");
+        admin = getIntent().getStringExtra("admin");
 
 
 
@@ -79,12 +80,14 @@ public class DetailsActivity extends AppCompatActivity {
             // Handle the case where the FoodItem is null
             Toast.makeText(this, "No data available for selected item", Toast.LENGTH_SHORT).show();
         }
-        if (username != null && username.equals(username)) {
+       // if (username != null && username.equals(username)) {
+          if(admin.equals("1")){
             // The current user is the one who filled the form, hide the claim button
-
+              Toast.makeText(this, admin, Toast.LENGTH_SHORT).show();
             claim.setVisibility(View.GONE);
         } else {
             // The current user is different, show the claim button
+              Toast.makeText(this, admin, Toast.LENGTH_SHORT).show();
             claim.setVisibility(View.VISIBLE);
         }
     }
