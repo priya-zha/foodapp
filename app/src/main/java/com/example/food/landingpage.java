@@ -1,6 +1,7 @@
 package com.example.food;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ActivityChooserView;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -34,17 +35,19 @@ public class landingpage extends AppCompatActivity {
     String email;
     String untid;
     String admin = "0";
+    Button editDetails;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landingpage);
 
         textViewGreeting = findViewById(R.id.textViewGreeting);
-//        textViewUsername = findViewById(R.id.textViewUsername);
-//        textViewEmail = findViewById(R.id.textViewEmail);
+        textViewUsername = findViewById(R.id.textViewUsername);
+        textViewEmail = findViewById(R.id.textViewEmail);
         textViewUntid = findViewById(R.id.textViewUntid);
         event = findViewById(R.id.event);
         listView = findViewById(R.id.listViewFoodItems);
+        editDetails = findViewById(R.id.editDetails);
 
         // Retrieve user details from the intent
         username = getIntent().getStringExtra("username");
@@ -54,6 +57,8 @@ public class landingpage extends AppCompatActivity {
         // Display a greeting message along with user details in the UI
         String greetingMessage = "Hello " + username + "!";
         textViewGreeting.setText(greetingMessage);
+        textViewUsername.setText("Username: " + username);
+        textViewEmail.setText("Email: " + email);
         textViewUntid.setText("UNTid: " + untid);
 
         initializeDatabase();
@@ -65,7 +70,16 @@ public class landingpage extends AppCompatActivity {
                 showPopupForm();
             }
         });
+
+        editDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(landingpage.this, Profile.class);
+                startActivity(intent);
+            }
+        });
     }
+
 
     private void initializeDatabase() {
         initialize_database dbHelper = new initialize_database(this);
@@ -160,26 +174,23 @@ public class landingpage extends AppCompatActivity {
     }
     private void displayFoodItemsInListView() {
         // Retrieve food items from the database
-
-
         List<FoodItem> foodItemList = getAllFoodItemsFromDatabase();
 
         // Create an adapter
-      //  ArrayAdapter<FoodItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, foodItemList);
+        //  ArrayAdapter<FoodItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, foodItemList);
 
         // Bind the adapter to the ListView
-       // listView.setAdapter(adapter);
+        // listView.setAdapter(adapter);
         // Retrieve food items from the database
-       // List<FoodItem> foodItemList = getAllFoodItemsFromDatabase();
+        // List<FoodItem> foodItemList = getAllFoodItemsFromDatabase();
 
         // Create a custom adapter
         FoodItemAdapter adapter = new FoodItemAdapter(this, foodItemList);
 
         // Bind the adapter to the ListView
         listView.setAdapter(adapter);
-        Intent intent = new Intent(this, landingpage.class);
-        startActivity(intent);
-
+//        Intent intent = new Intent(landingpage.this, landingpage.class);
+//        startActivity(intent);
         listView.setOnItemClickListener((parent, view, position, id) -> {
             FoodItem selectedFoodItem = (FoodItem) parent.getItemAtPosition(position);
             openDetailsActivity(selectedFoodItem);

@@ -147,34 +147,34 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:background="@drawable/red_bubble"/>
-    <TextView
-        android:id="@+id/warning2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/warningImageView"
-        android:layout_toEndOf="@id/warning1"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:text="gluten"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:background="@drawable/red_bubble"/>
-    <TextView
-        android:id="@+id/warning3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/warningImageView"
-        android:layout_toEndOf="@id/warning2"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:text="olives"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:background="@drawable/red_bubble"/>
+<!--    <TextView-->
+<!--        android:id="@+id/warning2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/warningImageView"-->
+<!--        android:layout_toEndOf="@id/warning1"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:text="gluten"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:background="@drawable/red_bubble"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/warning3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/warningImageView"-->
+<!--        android:layout_toEndOf="@id/warning2"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:text="olives"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:background="@drawable/red_bubble"/>-->
 
     <!-- Food Item Description -->
     <TextView
@@ -256,7 +256,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="John Doe(JohnDoe@myunt.edu)"
+        android:text="Sushant Thapa(sushantthapa@my.unt.edu)"
         android:textColor="@color/black"
         />
 

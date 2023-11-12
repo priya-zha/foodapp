@@ -30,8 +30,8 @@ public class DetailsActivity extends AppCompatActivity {
         textViewAllergen = findViewById(R.id.warning1);
         claim= findViewById(R.id.claim);
         warning1 = findViewById(R.id.warning1);
-        warning2 = findViewById(R.id.warning2);
-        warning3 = findViewById(R.id.warning3);
+//        warning2 = findViewById(R.id.warning2);
+//        warning3 = findViewById(R.id.warning3);
         imageView = findViewById(R.id.foodItemImageView);
 
 
