@@ -2,6 +2,7 @@ package com.example.food;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,23 +32,31 @@ public class login extends AppCompatActivity {
             });
         }
 
-        private void loginUser() {
-            String email = editTextLoginEmail.getText().toString().trim();
-            String password = editTextLoginPassword.getText().toString().trim();
+    private void loginUser() {
+        String email = editTextLoginEmail.getText().toString().trim();
+        String password = editTextLoginPassword.getText().toString().trim();
 
-            if (!email.isEmpty() && !password.isEmpty()) {
-                boolean loginSuccessful = dbHelper.checkLogin(email, password);
+        if (!email.isEmpty() && !password.isEmpty()) {
+            User loginUser = new User("", email, password,"");
+            boolean loginSuccessful = dbHelper.checkLogin(loginUser);
 
-                if (loginSuccessful) {
-                    showToast("Login successful");
-                    // Navigate to the main activity or perform other actions on successful login
-                } else {
-                    showToast("Invalid email or password");
-                }
+            if (loginSuccessful) {
+                showToast("Login successful");
+                // Retrieve user details from the database
+                User loggedInUser = dbHelper.getUserByEmail(email);
+
+                // Navigate to the user profile activity and pass user details
+                Intent intent = new Intent(login.this, landingpage.class);
+                intent.putExtra("username", loggedInUser.getUsername());
+                intent.putExtra("email", loggedInUser.getEmail());
+                startActivity(intent);
             } else {
-                showToast("Please fill in all fields");
+                showToast("Invalid email or password");
             }
+        } else {
+            showToast("Please fill in all fields");
         }
+    }
 
         private void showToast(String message) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

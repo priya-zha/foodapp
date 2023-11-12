@@ -1,5 +1,6 @@
 package com.example.food;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private MyDatabaseHelper dbHelper;
-    private EditText editTextUsername, editTextEmail, editTextPassword;
+    private EditText editTextUsername, editTextEmail, editTextPassword, editUintId;
     TextView logintext;
     private Button buttonRegister;
 
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 editTextUsername = findViewById(R.id.editTextUsername);
                 editTextEmail = findViewById(R.id.editTextEmail);
                 editTextPassword = findViewById(R.id.editTextPassword);
-               // logintext = findViewById(R.id.logintext);
+                editTextPassword = findViewById(R.id.editTextPassword);
+                logintext = findViewById(R.id.logintext);
 
                 buttonRegister = findViewById(R.id.buttonRegister);
                 buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -51,31 +53,41 @@ public class MainActivity extends AppCompatActivity {
                         registerUser();
                     }
                 });
-            }
 
-            private void registerUser() {
-                String username = editTextUsername.getText().toString().trim();
-                String email = editTextEmail.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-
-                if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                    long newRowId = dbHelper.insertUser(username, email, password);
-
-                    if (newRowId != -1) {
-                        showToast("User registered successfully with ID: " + newRowId);
-                        // Clear input fields after successful registration
-                        editTextUsername.getText().clear();
-                        editTextEmail.getText().clear();
-                        editTextPassword.getText().clear();
-                    } else {
-                        showToast("Error registering user.");
+                logintext.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, login.class);
+                        startActivity(intent);
                     }
-                } else {
-                    showToast("Please fill in all fields.");
-                }
+                });
             }
 
-            private void showToast(String message) {
+    private void registerUser() {
+        String username = editTextUsername.getText().toString().trim();
+        String email = editTextEmail.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        String uint_id = editTextPassword.getText().toString().trim();
+
+        if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+            User newUser = new User(username, email, password,uint_id);
+            long newRowId = dbHelper.insertUser(newUser);
+
+            if (newRowId != -1) {
+                showToast("User registered successfully with ID: " + newRowId);
+                // Clear input fields after successful registration
+                editTextUsername.getText().clear();
+                editTextEmail.getText().clear();
+                editTextPassword.getText().clear();
+            } else {
+                showToast("Error registering user.");
+            }
+        } else {
+            showToast("Please fill in all fields.");
+        }
+    }
+
+    private void showToast(String message) {
                 Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             }
         }
