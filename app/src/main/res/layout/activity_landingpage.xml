@@ -25,4 +25,19 @@
         android:layout_height="wrap_content"
         android:text="Email: "/>
 
+    <TextView
+        android:id="@+id/textViewUntid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: "/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Event"
+        android:id="@+id/event"
+        />
+
+
+
 </LinearLayout>

@@ -1,0 +1,113 @@
+<!-- popup_form_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="dd/mm/yyyy" />
+
+    <EditText
+        android:id="@+id/editTextLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Location" />
+
+    <EditText
+        android:id="@+id/editTextAvailableUntil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Available Until" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Food information"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/foodname"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 1"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/description"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 2"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/quantity"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 3"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/allergy"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 4"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/foodname1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 1"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/description1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 2"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/quantity1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 3"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:id="@+id/allergy1"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="EditText 4"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save" />
+
+</LinearLayout>

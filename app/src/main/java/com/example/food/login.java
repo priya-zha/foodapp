@@ -49,6 +49,7 @@ public class login extends AppCompatActivity {
                 Intent intent = new Intent(login.this, landingpage.class);
                 intent.putExtra("username", loggedInUser.getUsername());
                 intent.putExtra("email", loggedInUser.getEmail());
+                intent.putExtra("untid", loggedInUser.getUntid());
                 startActivity(intent);
             } else {
                 showToast("Invalid email or password");
