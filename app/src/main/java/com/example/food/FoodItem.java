@@ -14,6 +14,7 @@ public class FoodItem implements Serializable {
         private String foodDescription;
         private String quantity;
         private String allergen;
+        private boolean claimed;
 
         public long getEventId() {
             return eventId;
@@ -94,6 +95,8 @@ public class FoodItem implements Serializable {
         public void setAllergen(String allergen) {
             this.allergen = allergen;
         }
+
+    // Getter and setter for the claimed field
     @Override
     public String toString() {
         return "Description: " + description +

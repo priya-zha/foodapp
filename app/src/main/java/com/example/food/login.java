@@ -18,19 +18,19 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);;
 
-            dbHelper = new MyDatabaseHelper(this);
+        dbHelper = new MyDatabaseHelper(this);
 
-            editTextLoginEmail = findViewById(R.id.editTextLoginEmail);
-            editTextLoginPassword = findViewById(R.id.editTextLoginPassword);
+        editTextLoginEmail = findViewById(R.id.editTextLoginEmail);
+        editTextLoginPassword = findViewById(R.id.editTextLoginPassword);
 
-            buttonLogin = findViewById(R.id.buttonLogin);
-            buttonLogin.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loginUser();
-                }
-            });
-        }
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginUser();
+            }
+        });
+    }
 
     private void loginUser() {
         String email = editTextLoginEmail.getText().toString().trim();
@@ -44,8 +44,6 @@ public class login extends AppCompatActivity {
                 showToast("Login successful");
                 // Retrieve user details from the database
                 User loggedInUser = dbHelper.getUserByEmail(email);
-
-                // Navigate to the user profile activity and pass user details
                 Intent intent = new Intent(login.this, landingpage.class);
                 intent.putExtra("username", loggedInUser.getUsername());
                 intent.putExtra("email", loggedInUser.getEmail());
@@ -59,8 +57,7 @@ public class login extends AppCompatActivity {
         }
     }
 
-        private void showToast(String message) {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-        }
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-
+}

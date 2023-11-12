@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 editTextUsername = findViewById(R.id.editTextUsername);
                 editTextEmail = findViewById(R.id.editTextEmail);
                 editTextPassword = findViewById(R.id.editTextPassword);
-                editTextPassword = findViewById(R.id.editTextPassword);
+                editUintId = findViewById(R.id.editUintId);
                 logintext = findViewById(R.id.logintext);
 
                 buttonRegister = findViewById(R.id.buttonRegister);
@@ -74,11 +74,16 @@ public class MainActivity extends AppCompatActivity {
             long newRowId = dbHelper.insertUser(newUser);
 
             if (newRowId != -1) {
-                showToast("User registered successfully with ID: " + newRowId);
+                showToast("Thank you for registering an account");
                 // Clear input fields after successful registration
                 editTextUsername.getText().clear();
                 editTextEmail.getText().clear();
                 editTextPassword.getText().clear();
+                editUintId.getText().clear();
+
+                Intent intent = new Intent(MainActivity.this, login.class);
+                startActivity(intent);
+
             } else {
                 showToast("Error registering user.");
             }

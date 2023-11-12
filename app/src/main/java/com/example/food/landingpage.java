@@ -40,8 +40,8 @@ public class landingpage extends AppCompatActivity {
         setContentView(R.layout.activity_landingpage);
 
         textViewGreeting = findViewById(R.id.textViewGreeting);
-        textViewUsername = findViewById(R.id.textViewUsername);
-        textViewEmail = findViewById(R.id.textViewEmail);
+//        textViewUsername = findViewById(R.id.textViewUsername);
+//        textViewEmail = findViewById(R.id.textViewEmail);
         textViewUntid = findViewById(R.id.textViewUntid);
         event = findViewById(R.id.event);
         listView = findViewById(R.id.listViewFoodItems);
@@ -54,8 +54,6 @@ public class landingpage extends AppCompatActivity {
         // Display a greeting message along with user details in the UI
         String greetingMessage = "Hello " + username + "!";
         textViewGreeting.setText(greetingMessage);
-        textViewUsername.setText("Username: " + username);
-        textViewEmail.setText("Email: " + email);
         textViewUntid.setText("UNTid: " + untid);
 
         initializeDatabase();
@@ -162,6 +160,8 @@ public class landingpage extends AppCompatActivity {
     }
     private void displayFoodItemsInListView() {
         // Retrieve food items from the database
+
+
         List<FoodItem> foodItemList = getAllFoodItemsFromDatabase();
 
         // Create an adapter
@@ -177,6 +177,9 @@ public class landingpage extends AppCompatActivity {
 
         // Bind the adapter to the ListView
         listView.setAdapter(adapter);
+        Intent intent = new Intent(this, landingpage.class);
+        startActivity(intent);
+
         listView.setOnItemClickListener((parent, view, position, id) -> {
             FoodItem selectedFoodItem = (FoodItem) parent.getItemAtPosition(position);
             openDetailsActivity(selectedFoodItem);

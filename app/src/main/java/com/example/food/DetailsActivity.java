@@ -80,7 +80,9 @@ public class DetailsActivity extends AppCompatActivity {
             // Handle the case where the FoodItem is null
             Toast.makeText(this, "No data available for selected item", Toast.LENGTH_SHORT).show();
         }
-       // if (username != null && username.equals(username)) {
+
+
+        // if (username != null && username.equals(username)) {
           if(admin.equals("1")){
             // The current user is the one who filled the form, hide the claim button
               Toast.makeText(this, admin, Toast.LENGTH_SHORT).show();
@@ -90,5 +92,7 @@ public class DetailsActivity extends AppCompatActivity {
               Toast.makeText(this, admin, Toast.LENGTH_SHORT).show();
             claim.setVisibility(View.VISIBLE);
         }
+
+
     }
 }
