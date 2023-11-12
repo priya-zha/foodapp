@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Food"
         tools:targetApi="31">
         <activity
+            android:name=".LandingClaimPage"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".landingpage"
             android:exported="false" />
         <activity

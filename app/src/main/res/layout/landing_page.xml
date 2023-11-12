@@ -1,0 +1,277 @@
+<!-- res/layout/item_details_layout.xml -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Image View for Food Item -->
+    <ImageView
+        android:id="@+id/foodItemImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Food Item Image"/>
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foodItemImageView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="Veg Pizza"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textquantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foodItemImageView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/textViewDescription"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foodItemImageView"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/textquantity"
+        android:text="5"
+        android:textColor="@color/red"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foodItemImageView"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="0dp"
+        android:layout_toEndOf="@+id/textViewQuantity"
+        android:text="Date posted"
+        android:textColor="@color/red"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/youMightLikeIt"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/textViewQuantity"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/accept"
+        android:visibility="visible"
+        />
+    <!-- Dietary Information -->
+    <TextView
+        android:id="@+id/dietaryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewQuantity"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/youMightLikeIt"
+        android:text="You might like it because "
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <!-- Kosher Information -->
+    <TextView
+        android:id="@+id/preference1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youMightLikeIt"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:text="Kosher"
+        android:textStyle="bold"
+        android:background="@drawable/green_bubble"/>
+    <TextView
+        android:id="@+id/preference2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youMightLikeIt"
+        android:layout_toEndOf="@id/preference1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="cheese"
+        android:textStyle="bold"
+        android:background="@drawable/green_bubble"/>
+
+    <!-- Warning Bubble for Allergen -->
+    <ImageView
+        android:id="@+id/warningImageView"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/preference1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/alert"
+        android:visibility="visible"
+        app:tint="@color/red" />
+
+    <!-- Text: "May Contain" -->
+    <TextView
+        android:id="@+id/mayContainTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference1"
+        android:layout_toEndOf="@id/warningImageView"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:text="May Contain"
+        android:textStyle="bold"
+        android:textColor="@color/black" />
+
+    <!-- Text: "Meat" -->
+    <TextView
+        android:id="@+id/warning1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/warningImageView"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="eggs"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/red_bubble"/>
+    <TextView
+        android:id="@+id/warning2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/warningImageView"
+        android:layout_toEndOf="@id/warning1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="gluten"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/red_bubble"/>
+    <TextView
+        android:id="@+id/warning3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/warningImageView"
+        android:layout_toEndOf="@id/warning2"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="olives"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/red_bubble"/>
+
+    <!-- Food Item Description -->
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/warning1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Hey ya'll! There's some tasty dish leftover from the monthly Computer Geeks club meeting. Running out fast!! "
+        android:textColor="@color/black"
+        android:textStyle="italic"/>
+
+    <!-- Pickup Location -->
+    <TextView
+        android:id="@+id/pickupLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionTextView"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Location: "
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textViewLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionTextView"
+        android:layout_toEndOf="@+id/pickupLocation"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Discovery Park, K120"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/TextAvailableUntil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickupLocation"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Available until:"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/textViewAvailableUntil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pickupLocation"
+        android:layout_toEndOf="@id/TextAvailableUntil"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text=" November 11, 2023: 8 pm "
+        android:textColor="@color/black"
+        android:textStyle="italic"/>
+    <TextView
+        android:id="@+id/point_of_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewAvailableUntil"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Point of contact: "
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/point_of_contact_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewAvailableUntil"
+        android:layout_toEndOf="@id/point_of_contact"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="John Doe(JohnDoe@myunt.edu)"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/claim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/point_of_contact_value"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Claim"
+        android:textColor="@android:color/white" />
+
+
+
+</RelativeLayout>

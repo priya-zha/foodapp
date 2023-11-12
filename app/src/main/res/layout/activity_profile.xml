@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Profile Picture -->
+    <ImageView
+        android:id="@+id/profilePicture"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_border"
+        android:padding="8dp"
+        android:scaleType="centerCrop" />
+
+    <!-- User Name -->
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_below="@id/profilePicture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- Bio -->
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        android:gravity="center"
+        android:layout_below="@id/username"
+        android:layout_marginTop="8dp" />
+    <TextView
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(123)-456-7890"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:layout_below="@id/bio"
+        android:layout_marginTop="8dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/preference_row1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/dietaryPreferenceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Favorites: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Preference1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/dietaryPreferenceLabel"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="Halal"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Preference2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/Preference1"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="Cheese"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Preference3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/Preference2"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="Biryani"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/Preference4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/Preference3"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="Chinese"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/preference_row2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preference_row1"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/Preference21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="pasta"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Preference22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_toRightOf="@id/Preference21"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="rice"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Preference23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/Preference22"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="ramen"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/Preference24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/Preference23"
+            android:background="@drawable/green_bubble"
+            android:padding="8dp"
+            android:text="cake"
+            android:textStyle="bold" />
+
+
+        <!-- Edit Button for Dietary Preference -->
+        <ImageButton
+            android:id="@+id/editFavorites"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/edit_button" />
+
+    </RelativeLayout>
+
+    <!-- Favorites -->
+    <RelativeLayout
+        android:id = "@+id/allergy_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/preference_row2"
+        android:layout_marginTop="8dp"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:id="@+id/restriction_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Allergens/restrictions: "
+            android:textStyle="bold"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/restriction1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_toRightOf="@id/restriction_label"
+            android:background="@drawable/red_bubble"
+            android:padding="8dp"
+            android:text="egg"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/restriction2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_toRightOf="@id/restriction1"
+            android:background="@drawable/red_bubble"
+            android:padding="8dp"
+            android:text="gluten"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/restriction3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:layout_toRightOf="@id/restriction2"
+            android:background="@drawable/red_bubble"
+            android:padding="8dp"
+            android:text="beef"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+        <!-- Edit Button for Favorites -->
+
+
+        <ImageButton
+            android:id="@+id/editDietaryPreference"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/edit_button" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/allergy_row"
+        android:layout_marginTop="8dp"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have helped: "
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/student_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Stats"
+        android:layout_marginTop="8dp"
+        android:layout_margin="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="195+ Students"
+            android:textStyle="bold"
+            android:textSize="55dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
